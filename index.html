@@ -1,0 +1,38 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>🍽️ RecipeShare</title>
+</head>
+<body>
+  <h1>🍝 RecipeShare</h1>
+  <div id="recipe-list">Loading recipes...</div>
+
+  <script>
+    async function loadRecipes() {
+      let res = await fetch("http://localhost:5000/api/recipes");
+      let recipes = await res.json();
+
+      let container = document.getElementById("recipe-list");
+      container.innerHTML = "";
+
+      recipes.forEach(r => {
+        container.innerHTML += `
+          <div style="border:1px solid #ccc; margin:10px; padding:15px;">
+            <h2>${r.title}</h2>
+            <img src="${r.photo}" alt="${r.title}" width="200">
+            <p>${r.description}</p>
+            <h4>Ingredients:</h4>
+            <ul>${r.ingredients.map(i => `<li>${i}</li>`).join("")}</ul>
+            <h4>Instructions:</h4>
+            <p>${r.instructions}</p>
+          </div>
+        `;
+      });
+    }
+
+    loadRecipes();
+  </script>
+</body>
+</html>
+
