@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "title": "Tiramisu",
+    "description": "Classic Italian dessert with mascarpone and coffee.",
+    "ingredients": ["Mascarpone", "Eggs", "Coffee", "Ladyfingers", "Cocoa"],
+    "instructions": "Layer soaked ladyfingers with mascarpone mixture and chill.",
+    "photo": "tiramisu.jpg",
+    "comments": [],
+    "ratings": [],
+    "averageRating": 0
+  }
+]
+
